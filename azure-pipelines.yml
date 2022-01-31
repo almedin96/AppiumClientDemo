@@ -1,4 +1,11 @@
 # ASP.NET
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
